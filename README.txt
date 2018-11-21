@@ -10,7 +10,7 @@ A Security group with ports 3389, 80, and 443 will be created.
 Then an Application LoadBalancer will be Created having a HTTPS Listener at port 443 and you will be asked to enter the ARN of the certificate.
 (You should have a certificate on your amazon certificate manager)
 
-A TargetGroup will be created and the created instance will be registered to that target group, and the health check will be at port 80.
+A TargetGroup will be created and the created instance will be registered to that target group.
 
 After the template is successfully run you will get the ALB's DNS name and Instance's public IP as outputs.
 
@@ -34,3 +34,4 @@ $ terraform destroy
 1. The subnet you choose should be in the same Availability zone you choose.
 2. The Windows instance will be launched with a key that is already existed in the account, so the Key Pair variable is case sensitive.
 3. The subnets should be public subnets.
+4. After The template is run please wait about 8 mins untill the IIS packages is installed.
